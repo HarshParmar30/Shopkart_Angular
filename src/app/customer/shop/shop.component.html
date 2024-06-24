@@ -1,0 +1,19 @@
+
+<div class="container">
+
+    <div class="box-container">
+
+        <div class="box" *ngFor="let item of shopProducts">
+            <img src="{{item.image}}" routerLink="/product-details/{{item._id}}">
+            <h3>{{item.title}}</h3>
+            <p>Price :{{item.price}}&#x20B9; </p>
+            <p>Colour :{{item.color}}</p>
+            <a routerLink="/product-details/{{item._id}}" class="btn">See Product
+                
+            </a>
+
+        </div>
+
+    </div>
+
+</div>

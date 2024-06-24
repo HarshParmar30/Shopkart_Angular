@@ -1,0 +1,27 @@
+<mat-toolbar color="primary" class="mat-toolbar">
+    <mat-toolbar-row>
+      <span class="header" routerLink="/">
+        &nbsp; &nbsp;ShopKart
+      </span>
+      <span class="spacer-left"></span>
+      <ng-container [ngSwitch]="menuType" class="list">
+        <ng-container *ngSwitchCase="'default'">
+          <button mat-button routerLink="/"></button>
+          <button mat-button routerLink="/customer-signup">Signup</button>
+          <button mat-button routerLink="/customer-signin">SignIn</button>
+        </ng-container>
+        <ng-container *ngSwitchCase="'customer'">
+          <button mat-button routerLink="/">Explore Shop</button>
+          <button mat-button routerLink="/cart">Bag</button>
+          <button mat-button> <u>{{userName}}</u> </button>
+        </ng-container>
+      </ng-container>
+      <span class="spacer"></span>
+      <ng-container [ngSwitch]="menuType" class="list">
+        <ng-container *ngSwitchCase="'customer'">
+          <button mat-button (click)="onCustomerLogout()">Logout</button>
+        </ng-container>
+      </ng-container>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  
